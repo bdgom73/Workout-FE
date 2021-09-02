@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif; */
+.modal_container{
+    position: fixed;
+    top:0px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.58);
+    z-index: 1060;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+}
+.modal_container > .modal{  
+    display: block;
+    z-index: 1060;
+    position: absolute;
+    top:10%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 0;
+}
+
+.modal_container > .modal > .modal_title{
+    font-family: 'system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji';
+    padding: 0  10px ;
+    display: flex;
+    z-index: 1061;
+    align-items: center;
+    justify-content: space-between;
+    background-color: inherit;
+    width: 100%;
+    min-width: 300px;
+    height: 40px;
+    font-size: 19px;
+    color :#212529;
+    border: 0;
+    font-weight: bold;
+    border-bottom: 1px solid #ced4da;
+}
+.modal_container > .modal > .modal_title > svg{
+    cursor: pointer;
+}
+.modal_container > .modal > .modal_body{
+    padding: 7px;
+    width: 100%;
+    min-height: 120px;
+    /* align-items: ; */
+}
+
+.dot_header[data-color]{
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    
+}
+.dot_header[data-color="ok"]::before{
+    display: inline-block;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--bs-success);
+    /* var(--bs-primary); */
+    margin-right: 3px;
+}
+.dot_header[data-color="no"]::before{
+    display: inline-block;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--bs-danger);
+    /* var(--bs-primary); */
+    margin-right: 3px;
+}
+.custom_view{
+    /* position: static;
+    top:0; */
+    /* float: left; */
+    /* width: 100%; */
+}
+.custom_view[data-show = "show"]{
+    display: table-row !important;
+}
+.custom_view[data-show = "noshow"]{
+    display: none;
+}
+
+/* //// */
+.modal_container > .modal_right{  
+    display: block;
+    /* z-index: 1061; */
+    position: absolute;
+    top:0;
+    right:0;
+    /* transform: translate(-50%,-10%); */
+    width: auto;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 0;
+}

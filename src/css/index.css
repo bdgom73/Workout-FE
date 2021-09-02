@@ -1,0 +1,243 @@
+/* custcom css */
+@import "./modal.css";
+/* tag */
+a{
+   text-decoration: none;
+}
+body{
+    min-width: 420px;
+}
+
+/**/
+.isWorkout{
+    position: absolute !important;
+    top:-30px;
+}
+
+
+/* me */
+.logo{
+    width: 150px;
+}
+
+/* bs custom */
+.custom_table th, .custom_table td{
+    text-align: center;
+}
+.custom_table td{
+
+    vertical-align: middle;
+}
+.custom_table td.thumbnail{
+    width: 80px;
+}
+.custom_table td.thumbnail img{
+    max-width: 80px; 
+}
+.custom-sidebar{
+    background-color: #f1f1f1;
+}
+.sidebar {
+   margin-top: 5px;
+}
+.fc-header-toolbar{
+    margin-top: 5px;
+}
+
+/* dateplcker */
+.custom_datepicker_wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+.custom_datepicker{
+    display: block;
+    /* width: 120px; */
+    width: 100%;
+    margin: 0 auto;
+}
+.tilde{
+    font-size: 18px;
+    font-weight: bold;
+}
+.custom_title{
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    margin: 5px 0;
+    align-items: center;
+}
+.custom_title::before{
+    display: inline-block;
+    content: "";
+    height: 1.5em;
+    border-left: 3px solid #0d6efd;
+    margin:0 5px;
+}
+.custom_textarea{
+    width: 100%;
+    resize: none;
+    border: 0;
+    min-height: 80px;
+    cursor: auto;
+}
+.custom_textarea:focus{
+    outline: none;
+    border :1px solid #e8f1ff !important;
+}
+
+
+.nav-link{
+    color : rgba(0, 0, 0, 0.5);
+}
+
+/* pagination */
+.custom_paginate{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    border: 0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 1px #eeeeee;
+    padding: 5px 0;
+    margin: 0;
+}
+.custom_paginate .custom_page{
+    list-style: none;
+}
+.custom_paginate .custom_page_link{
+    padding : 0 15px;
+    color : #222;
+}
+.custom_previous_link , .custom_next_link{
+    padding : 0 5px;
+    color : #000!important;
+} 
+.custom_active{
+    border-radius: 5px;
+    background-color: #e64f4f; 
+    box-shadow: 1px 1px 3px 0px #cf3939;
+}
+.custom_active_link{
+    color : #fff !important;
+}
+.custom_previous, .custom_next{
+   /* justify-content: space-between; */
+}
+
+/* workout card */
+.workout_card{
+    box-shadow: 1px 1px 4px 1px #bbb;
+    padding: 5px;
+    margin : 0 5px;
+    border-radius: 5px;
+    
+}
+
+.hover-underline{
+    color :#0a58ca;
+}
+.hover-underline:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.btn_wrap{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn_wrap > .btn{
+    margin: 0 3px;
+}
+
+.handler{
+    cursor: pointer;
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.span_btn{
+    cursor: pointer;
+}
+.span_btn:hover{
+    text-decoration: underline;
+}
+
+.file_wrap{
+    width: 300px;
+    height: 300px;
+    background-color: #757575;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.file_wrap > input[type="file"]{
+    display: none;
+}
+.file_wrap > label{
+    color : #fff;
+}
+.file_wrap .plus:hover{
+    color : #0a58ca;
+}
+
+.add-close{
+    position: relative;
+}
+.add-close > .close{
+    position: absolute;
+    right: 5px;
+    top:5px
+}
+
+
+@media (max-width: 564px){
+    .fc-header-toolbar{
+        flex-flow: wrap;
+        flex-direction: row-reverse;
+    }
+    .fc-header-toolbar > .fc-toolbar-chunk:last-child{
+        margin-top: 10px;
+    }
+}
+@media (max-width: 992px){
+    .custom_col{
+        width: 100%;
+    }
+    .custom-sidebar {
+        display: none !important;
+    }
+}
+
+@media (max-width: 550px){
+    .table{
+        font-size: 13px;
+    }
+    .table .thumbnail img {
+        width: 70px;
+    }
+    .nav-tabs .nav-item .nav-link {
+        font-size: 12px;
+    }
+}
+@media (max-width: 410px){
+    .table{
+        font-size: 11px;
+    }
+    .table .thumbnail img {
+        width: 60px;
+    }
+    
+}
+@media (max-width: 380px){
+    .table{
+        font-size: 10px;
+    }
+    .table .thumbnail img {
+        width: 50px;
+    }
+}
