@@ -56,6 +56,7 @@ export default function RoutineDetail(){
         axios.get(url,{headers : route.AUTH_TOKEN(cookies.SSID)})
         .then(res=>{
             const result = res.data;
+            console.log(res.data);
             if(result.result_state){
                 setRoutine(result.data || {});
                 setTitle(result.data.title);
@@ -331,7 +332,7 @@ export default function RoutineDetail(){
                         <th>#</th>  
                         <th>운동명</th>
                         <th>부위</th>
-                        <th>set x num</th>
+                        <th>세트수 x 횟수</th>
                     </tr>    
                 </thead>
                 <tbody>

@@ -1,7 +1,7 @@
 import { Tooltip } from "bootstrap";
 import { useRef } from "react";
 import { useState } from "react";
-import { Badge, OverlayTrigger, Table } from "react-bootstrap";
+import { Alert, Badge, OverlayTrigger, Table } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
 import { Link, useRouteMatch } from "react-router-dom"
 import { dateFormat } from "../../common";
@@ -57,7 +57,7 @@ export default function Search(){
 
     return(
         <>
-        {params.term ? params.term : "검색어가 없습니다"}
+        <Alert variant="primary" className="mt-3 mb-3"> 검색어 | <small>{params.term ? params.term : "검색어가 없습니다"}</small></Alert>      
         <Table>
             <thead>
                 <tr>

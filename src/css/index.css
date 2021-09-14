@@ -5,7 +5,7 @@ a{
    text-decoration: none;
 }
 body{
-    min-width: 420px;
+    /* min-width: 420px; */
 }
 
 /**/
@@ -18,6 +18,11 @@ body{
 /* me */
 .logo{
     width: 150px;
+ 
+}
+.logo1{
+    width: 60px;
+    margin-left: 10px;
 }
 
 /* bs custom */
@@ -193,7 +198,170 @@ body{
     right: 5px;
     top:5px
 }
+.me_wrap .input-group{
+    max-width: 200px !important;
+}
+.me_wrap input:read-only{
+    background-color: #fff !important;
+   
+}
+.graph-wrap{
+    margin-top: 30px;
+    padding: 8px;
+}
+.graph-wrap .bmi-graph{   
+    width: 100%;
+    height: 30px;
+    border : 1px solid #8d8d8d;
+    position: relative;
+    display: flex;
+    color : #eee;
+    text-align: center;
+    font-size: 11px;
+    line-height: 2.5em;
+}
 
+.graph-wrap #bmi::before{
+    width: var(--bmi-var);
+}
+.bmi-target{
+    position: absolute;
+    left: 0%;
+    bottom: 0px;
+    width: 1px;
+    height: 40px;
+    background-color: #363636;
+    z-index: 3;
+}
+.bmi-target .bmi_value{
+    bottom:35px;
+    left: -50px;
+    min-width: 100px;
+    line-height: 1.5em;
+    z-index: 4;
+    font-size: 13px;
+    position: absolute;
+    background-color: #e4ad0a;
+    border: 1px solid #d6c20d;
+    color : #000000;
+    border-radius: 5px;
+    font-weight: bold;
+    
+}
+.bmi-target .bmi_value small{
+    color : #190a5e;
+   
+}
+.bmi_start{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top : 21px;
+    color : #000000;
+    left : 0px;
+    font-weight: bold;
+}
+
+.bmi_label{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top : 21px;
+    color : #000000;
+    right: -5.5px;
+    font-weight: bold;
+}
+
+.graph-wrap .bmi-graph .bmi1{
+    background-color: #2b91aa;
+    width: 37%;
+    position: relative;
+}
+
+.graph-wrap .bmi-graph .bmi2{
+    background-color: #2934c2;
+    /* width: 9%; + 4% */
+    width: 13%;
+    position: relative;
+}
+.graph-wrap .bmi-graph .bmi3{
+    background-color: #6532dd;
+    /* width: 4%;  + 6%*/ 
+    width: 10%;
+    position: relative;
+}
+.graph-wrap .bmi-graph .bmi4{
+    background-color: #921dc0;
+    /* width: 10%; +5% */
+    width: 15%;
+    position: relative;
+}
+.graph-wrap .bmi-graph .bmi5{
+    background-color: #e72222;
+    width: 25%;
+    position: relative;
+}
+
+.bmi_info strong{
+    font-size: 18px;
+}
+.bmi_info > span{
+    font-size: 15px;
+    margin-left: 5px;
+    color : #941611;
+    font-weight: bold;
+}
+.protine_ul table tr td{
+    width: 100px;
+}
+
+.anchor{
+    color: #0a58ca;
+    cursor: pointer;
+}
+.anchor:hover{
+    text-decoration: underline;
+}
+
+span.i_date{
+    color : #494949;
+    font-weight: bold;
+    font-size: 15px;
+    flex: 0.4 0 auto;
+}
+span.i_weight{
+    left: 1.2rem;
+    color : #494949;
+    font-weight: bold;
+    font-size: 15px;
+    flex: 1 1 auto;
+}
+/* input[type='range'].custom_range {
+    -webkit-appearance: none; 
+    overflow: hidden;
+    width: 100%;  
+     height: 10px; 
+     background: transparent; 
+    cursor: pointer;
+    background: #e5e4e3;  
+}
+  
+  
+input[type='range'].custom_range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px; 
+    height: 10px;
+    background: #fff;
+    box-shadow: -100vw 0 0 100vw dodgerblue;
+    border: 0.1px solid dodgerblue;
+    cursor: pointer; 
+} */
+
+.github_btn{
+    background-color : #171515; 
+    color : #fff;
+    border: 1px solid #2a2a2a;
+}
 
 @media (max-width: 564px){
     .fc-header-toolbar{
@@ -204,6 +372,7 @@ body{
         margin-top: 10px;
     }
 }
+
 @media (max-width: 992px){
     .custom_col{
         width: 100%;

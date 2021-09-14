@@ -44,7 +44,7 @@ export default function Home(){
         }
         const url = `/myApi/workout/get/list/isWorkout?start_date=${start}&end_date=${end}`;
         axios.get(url,{
-            headers: route.AUTH_TOKEN(SSID)
+            headers: route.AUTH_TOKEN()
         })
         .then(res=>{
             setWorkout(res.data.data || []);
@@ -54,8 +54,7 @@ export default function Home(){
     const calendarMemoList = ()=>{
         let start = moment().startOf('month').format('YYYY-MM-DD');
         let end = moment().endOf('month').add("11","days").format("YYYY-MM-DD");
-        const url = `/myApi/calendar/get/all/${start}/${end}`;
-        axios.get(url,{
+        axios.get(route.GET_CALENDARLIST(start,end),{
             headers: route.AUTH_TOKEN(SSID)
         })
         .then(res=>{

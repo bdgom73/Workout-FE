@@ -10,10 +10,10 @@ export default function useMember(){
     const [cookies ,setCookies, removeCookie] = useCookies();
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(false);
-    const keepToken = window.localStorage.getItem("SSID");
+    // const keepToken = window.localStorage.getItem("SSID");
     const fetchMemberData = async ()=>{
         return await axios.get(route.INFO,{
-            headers : route.AUTH_TOKEN(keepToken ?  keepToken : cookies.SSID)
+            headers : route.AUTH_TOKEN()
         });
     }
 
@@ -37,15 +37,15 @@ export default function useMember(){
             setLoading(false);
 
             if(result.result_state === false){
-                // removeCookie("SSID",{path:"/"});
                 removeCookie("exp",{path:"/"});
                 window.localStorage.removeItem("SSID");
             }
         })
         .catch(e=>{
+            console.log(e.response);
             setData({});  
             setLoading(false);
-            removeCookie("SSID",{path:"/"});
+            // removeCookie("SSID",{path:"/"});
             removeCookie("exp",{path:"/"});
             window.localStorage.removeItem("SSID");
         })

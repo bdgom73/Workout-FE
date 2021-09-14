@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 import { Button, Image, Col, Container, FloatingLabel, Form, Row, OverlayTrigger,Tooltip } from "react-bootstrap";
 import { FiPlus } from "react-icons/fi";
-import { FaLastfmSquare, FaRegImages } from "react-icons/fa";
+import { FaRegImages } from "react-icons/fa";
 import route from "../../route";
 import { useCookies } from "react-cookie";
 import axios from "axios";
-import { useRouteMatch } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 import useMember from "../../useCustom/useMember";
 export default function WorkoutDetail(){
 
@@ -114,12 +114,14 @@ export default function WorkoutDetail(){
             setImageUpdate(false);
         })
         .catch(e => console.log(e.response))
+        
     }
     return(
         <>
         <Container  className="mt-3 mb-3" style={{maxWidth:"1050px"}} >
         <Row className="mt-3 mb-3" ><h1>운동정보</h1></Row>
         <hr/>
+    
         <Row>
             <Col className="d-flex justify-content-center mb-3" md="5">
                 <div>

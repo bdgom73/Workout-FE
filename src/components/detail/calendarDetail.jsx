@@ -52,7 +52,6 @@ export default function CalendarDetail(props){
     }
 
     const changeScheduleHandler = ()=>{
-        const url =`myApi/calendar/change/schedule`;
         const fd = {
             id : data.id,
             title : title,
@@ -61,7 +60,7 @@ export default function CalendarDetail(props){
             end : moment(endDate).add(1,"day").format("YYYY-MM-DD"),
             color : color
         }
-        axios.post(url, fd,{headers:route.AUTH_TOKEN(cookies.SSID)})
+        axios.post(route.UPDATE_SCHEDULE, fd,{headers:route.AUTH_TOKEN(cookies.SSID)})
         .then(res=>{
             const result = res.data.data;
             setTitle(result.title);
@@ -77,7 +76,7 @@ export default function CalendarDetail(props){
     const deleteSchedule = ()=>{
         try {
             if(window.confirm("정말로 삭제하시겠습니까?")) {
-                axios.delete(`/myApi/calendar/delete/schedule/${data.id}`,{headers:route.AUTH_TOKEN(cookies.SSID)})
+                axios.delete(route.DELETE_SCHEDULE(data.id),{headers:route.AUTH_TOKEN(cookies.SSID)})
                 .then(res=>{
                     if(res.data.result_state){
                         update();
@@ -139,12 +138,12 @@ export default function CalendarDetail(props){
                 </InputGroup>
                 </>: 
                 <div className="mb-1">
-                    <div className="custom_title mt-1">제목</div>
-                    <h3>{title}</h3>
+                    <h3 className="mt-1">◽제목</h3>
+                    <h5>{title}</h5>
                 </div>
                 }
-                <Col className="text-center">  
-                {!isUpdate ? <div className="custom_title">일정</div> : ""}           
+                <Col >  
+                {!isUpdate ? <h3 className="mt-1 text-left">◽일정</h3> : ""}           
                 {
                 isUpdate ? dataUpdate() :          
                 start === end ?  

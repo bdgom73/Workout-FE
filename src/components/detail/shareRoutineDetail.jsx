@@ -43,6 +43,14 @@ export default function ShareRoutineDetail(){
         else return <>{modifiedDate} &nbsp; <Badge bg="secondary">수정됨</Badge></>;
     }
 
+    const copyRoutine = ()=>{
+        axios.post(route.COPY_ROUTINE(routineID),"",{
+            headers:route.AUTH_TOKEN()
+        }).then(res=>{
+            console.log(res);
+        }).catch(e=> console.log(e.response));
+    }
+
     return(
         <>
         <div className="custom_div">
@@ -107,7 +115,7 @@ export default function ShareRoutineDetail(){
                 {
                     member.id === routine.member_id ? 
                     <Button  onClick={()=> history.push(`/routine/${routineID}`)}>수정하러가기</Button> : 
-                    <Button variant="success" onClick={()=> history.push(`/routine/${routineID}`)}>루틴 복사</Button>
+                    <Button variant="success" onClick={copyRoutine}>루틴 복사</Button>
                 }
                
             </div>

@@ -60,8 +60,10 @@ export default function Header(){
     const searchHandler = ()=>{history.push(`/search=${term}`);}
 
     return(
-        <Navbar collapseOnSelect  expand="lg" bg="dark" variant="dark" style={{padding : "10px"}} >          
-            <Navbar.Brand href="/">Workout App</Navbar.Brand>      
+        <Navbar collapseOnSelect  expand="lg" bg="dark" variant="dark" style={{padding : "3px"}} >          
+            <Navbar.Brand href="/">
+                <img src="/images/logo1.png" alt="logo" className="logo1"/>
+            </Navbar.Brand>      
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>     
             <Navbar.Collapse id="responsive-navbar-nav">      
                 <Form.Text style={{margin : "0 5px"}}>
@@ -85,14 +87,15 @@ export default function Header(){
                 </Nav>          
                 <Form className="d-flex">     
                     <FormControl
+                        size="sm"
                         type="search"
-                        placeholder="Search"
+                        placeholder="Routine Search.."
                         aria-label="Search"
                         defaultValue={term}
                         onChange={(e)=> setTerm(e.target.value)}
                         onKeyPress={(e)=>{ if(e.key === "Enter") searchHandler(); }}
                     />
-                    <Button className="outline-success" onClick={searchHandler}>Search</Button>
+                    <Button size="sm" className="outline-success" onClick={searchHandler}>Search</Button>
                 </Form>                      
             </Navbar.Collapse>         
         </Navbar>

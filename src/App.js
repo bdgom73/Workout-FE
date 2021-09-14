@@ -20,6 +20,10 @@ import ShareRoutine from './components/route/shareRoutine';
 import ShareRoutineDetail from './components/detail/shareRoutineDetail';
 import AddWorkout from './components/inputs/addWorkout';
 import WorkoutDetail from './components/detail/workoutDetail';
+import Me from './components/route/me';
+import JoinCheck from './components/route/joinCheck';
+import NotFound from './components/notFound';
+import GithubLoginCallback from './components/callback/githubLoginCallback';
 
 function SwitchTemplate(){
 
@@ -46,8 +50,9 @@ function SwitchTemplate(){
 
                   <Route exact path="/search=:term"><Search/></Route> 
                   <Route exact path="/search="><Search/></Route>   
-                  
-                  <Route path="*">404</Route>  
+
+                  <Route exact path="/me"><Me/></Route>
+                  <Route path="*"><NotFound/></Route>  
                 </Switch>
             </Col>
         </Row>
@@ -59,23 +64,36 @@ function SwitchTemplate(){
 
 function App() {
 
-  const [cookies] = useCookies();
-  const [isLogined , setIsLogined] = useState(window.localStorage.getItem("SSID") ?  true  : cookies.SSID ? true : false  );
-  
+  const [isLogined , setIsLogined] = useState(false);
+  const [on,setOn] = useState(true);
+
+  useEffect(()=>{
+    if(window.localStorage.getItem("SSID")){
+      setIsLogined(true);
+      setOn(false);
+    }else{
+      setIsLogined(false);
+      setOn(false);
+    }
+  },[])
   return (
     <>
-    {isLogined ? 
-    <SwitchTemplate/> : 
-    <> 
-    <Switch>
-      <Route exact path="/"><Login/></Route>
-      <Route exact path="/join"><Join/></Route>
+    {
+    on ? <JoinCheck/> :
+    isLogined ? 
+      <SwitchTemplate/> : 
+      <> 
+      <Switch>
+        <Route exact path="/"><Login/></Route>
+        <Route exact path="/join"><Join/></Route>
+        <Route exact path="/callback"><GithubLoginCallback/></Route>
+        <Route path="*"><NotFound/></Route>    
+       
+      </Switch>
       
-      <Route path="*"><Login/></Route>    
-    </Switch>
-    
-    </>
+      </>
     }
+    
     </>
   );
 }

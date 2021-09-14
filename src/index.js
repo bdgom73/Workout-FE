@@ -6,6 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 
+import dotenv from "dotenv";
+dotenv.config();
+
 ReactDOM.render(
   <CookiesProvider>
   <BrowserRouter>
