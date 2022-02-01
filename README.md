@@ -1,4 +1,4 @@
-# EXMA Workout App Client
+# EXMA Workout App 
 ## Logged In
 
 ### 1-1 HOME 
